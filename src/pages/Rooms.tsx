@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wifi, Tv, Users, Bath, Fan, Coffee, Power, Shirt, Bed, NoSmoking } from 'lucide-react';
+import { Wifi, Tv, Users, Bath, Fan, Coffee, Power, Shirt, Bed, Ban } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
 interface RoomType {
@@ -37,7 +37,7 @@ const Rooms = () => {
         { icon: <Tv className="w-4 h-4" />, text: '薄型テレビ' },
         { icon: <Bed className="w-4 h-4" />, text: '布団2組' },
         { icon: <Bath className="w-4 h-4" />, text: '共用バスルーム' },
-        { icon: <NoSmoking className="w-4 h-4" />, text: '禁煙' }
+        { icon: <Ban className="w-4 h-4" />, text: '禁煙' }
       ],
       bathAmenities: [
         '無料バスアメニティ',
@@ -76,7 +76,7 @@ const Rooms = () => {
         { icon: <Tv className="w-4 h-4" />, text: '薄型テレビ' },
         { icon: <Bed className="w-4 h-4" />, text: '布団8組' },
         { icon: <Bath className="w-4 h-4" />, text: '共用バスルーム' },
-        { icon: <NoSmoking className="w-4 h-4" />, text: '禁煙' }
+        { icon: <Ban className="w-4 h-4" />, text: '禁煙' }
       ],
       bathAmenities: [
         '無料バスアメニティ',
@@ -112,7 +112,7 @@ const Rooms = () => {
         { icon: <Wifi className="w-4 h-4" />, text: '無料WiFi' },
         { icon: <Tv className="w-4 h-4" />, text: '薄型テレビ' },
         { icon: <Bath className="w-4 h-4" />, text: '共用バスルーム' },
-        { icon: <NoSmoking className="w-4 h-4" />, text: '禁煙' }
+        { icon: <Ban className="w-4 h-4" />, text: '禁煙' }
       ],
       bathAmenities: [
         '無料バスアメニティ',
