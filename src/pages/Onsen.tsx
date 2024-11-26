@@ -64,7 +64,7 @@ const Onsen = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1545079968-1feb95494244?auto=format&fit=crop&q=80&w=2000"
+          src="/images/onsen-top.jpg"
           alt="蔵王温泉の露天風呂"
           className="w-full h-full object-cover"
         />
