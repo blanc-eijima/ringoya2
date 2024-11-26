@@ -41,19 +41,19 @@ function HomePage() {
             <Feature 
               title="温泉"
               description="当館自慢の天然温泉では、四季折々の景色を眺めながら、心身ともに癒やされるひとときをお過ごしいただけます。"
-              imageUrl="/slider-01.jpg"
+              imageUrl="/images/onsen.jpg"
               imageAlt="天然温泉の露天風呂"
             />
             <Feature
               title="お部屋"
               description="全室から日本庭園が望める、落ち着きのある和の空間。現代的な快適さと伝統的な和の趣を兼ね備えた客室です。"
-              imageUrl="/slider-02.jpg"
+              imageUrl="/images/room.jpg"
               imageAlt="和モダンな客室"
             />
             <Feature
               title="お料理"
               description="山口県の旬の食材を使用した会席料理。地元の味覚と共に、目にも美しい料理の数々をご堪能ください。"
-              imageUrl="/slider-03.jpg"
+              imageUrl="/images/cuisine.jpg"
               imageAlt="会席料理"
             />
           </div>
