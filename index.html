@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅館 林檎屋</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <!-- Netlify Forms Detection -->
+    <form name="reservation" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="lastName" />
+      <input type="text" name="firstName" />
+      <input type="text" name="furiganaLast" />
+      <input type="text" name="furiganaFirst" />
+      <input type="email" name="email" />
+      <input type="email" name="confirmEmail" />
+      <input type="text" name="postalCode" />
+      <input type="text" name="prefecture" />
+      <input type="text" name="city" />
+      <input type="text" name="address" />
+      <input type="tel" name="phone1" />
+      <input type="tel" name="phone2" />
+      <input type="date" name="checkInDate" />
+      <input type="number" name="adults" />
+      <input type="number" name="children" />
+      <select name="roomType">
+        <option value="和室">和室</option>
+        <option value="和洋室">和洋室</option>
+        <option value="特別室">特別室</option>
+      </select>
+      <select name="adultMeal">
+        <option value="和食">和食</option>
+        <option value="洋食">洋食</option>
+        <option value="特別会席">特別会席</option>
+      </select>
+      <select name="childMeal">
+        <option value="子供用和食">子供用和食</option>
+        <option value="子供用洋食">子供用洋食</option>
+      </select>
+      <select name="parkingType">
+        <option value="不要">不要</option>
+        <option value="一般駐車場">一般駐車場</option>
+        <option value="大型車両">大型車両</option>
+      </select>
+      <textarea name="notes"></textarea>
+      <input type="hidden" name="subject" data-remove-prefix value="林檎屋予約: %{data.lastName} %{data.firstName} 様" />
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>

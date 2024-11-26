@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅館 林檎屋</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">林檎屋</a>
+            <div class="nav-links">
+                <a href="/rooms">客室</a>
+                <a href="/onsen">温泉</a>
+                <a href="/toji">湯治のすすめ</a>
+                <a href="/dining">食事</a>
+                <a href="/facilities">館内施設</a>
+                <a href="/access">アクセス・周辺観光</a>
+            </div>
+            <button class="reserve-btn">予約する</button>
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/rooms">客室</a>
+            <a href="/onsen">温泉</a>
+            <a href="/toji">湯治のすすめ</a>
+            <a href="/dining">食事</a>
+            <a href="/facilities">館内施設</a>
+            <a href="/access">アクセス・周辺観光</a>
+            <button class="reserve-btn">予約する</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="slideshow">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&q=80&w=2000" alt="旅館外観">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=2000" alt="客室">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1545079968-1feb95494244?auto=format&fit=crop&q=80&w=2000" alt="温泉">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>旅館 林檎屋</h1>
+            <p>心やすらぐ温泉の宿</p>
+        </div>
+        <div class="slide-dots"></div>
+    </div>
+
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="container">
+            <h2>山口県の温泉宿「林檎屋」</h2>
+            <p>当館では、伝統的な和の雰囲気と心安らぐ温泉体験を提供いたします。山口県の美しい景観と共にお楽しみください。</p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1545079968-1feb95494244?auto=format&fit=crop&q=80&w=800" alt="温泉">
+                </div>
+                <h3>温泉</h3>
+                <p>当館自慢の天然温泉で日々の疲れを癒してください。</p>
+            </div>
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800" alt="客室">
+                </div>
+                <h3>客室</h3>
+                <p>和の落ち着いた空間で、ゆったりとお過ごしください。</p>
+            </div>
+            <div class="feature">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&q=80&w=800" alt="料理">
+                </div>
+                <h3>料理</h3>
+                <p>地元の旬の食材をふんだんに使用した料理を提供します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2>新着情報</h2>
+                <a href="#" class="view-all">すべてのお知らせ</a>
+            </div>
+            <div class="news-grid">
+                <a href="#" class="news-item">
+                    <time>2024.03.15</time>
+                    <span class="category onsen">温泉</span>
+                    <h3>春の温泉祭り開催のお知らせ（4月1日〜4月7日）</h3>
+                </a>
+                <a href="#" class="news-item">
+                    <time>2024.03.10</time>
+                    <span class="category dining">お料理</span>
+                    <h3>春の会席料理「桜花会席」提供開始のお知らせ</h3>
+                </a>
+                <a href="#" class="news-item">
+                    <time>2024.03.01</time>
+                    <span class="category notice">お知らせ</span>
+                    <h3>館内施設メンテナンスに関するお知らせ（3月20日）</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="plans">
+        <div class="container">
+            <h2>おすすめプラン</h2>
+            <div class="plan-grid">
+                <div class="plan">
+                    <h3>四季折々プラン</h3>
+                    <p class="price">¥22,000<span>〜</span></p>
+                    <p class="description">1泊2食付き、季節の会席料理と温泉を楽しむ基本プラン</p>
+                    <ul>
+                        <li>夕食：季節の会席料理</li>
+                        <li>朝食：和朝食</li>
+                        <li>温泉無制限入浴</li>
+                    </ul>
+                    <button class="reserve-btn">予約する</button>
+                </div>
+                <div class="plan">
+                    <h3>特選懐石プラン</h3>
+                    <p class="price">¥35,000<span>〜</span></p>
+                    <p class="description">特選食材を使用した懐石料理と特別室でのご宿泊</p>
+                    <ul>
+                        <li>特選懐石料理</li>
+                        <li>朝食：部屋出し和朝食</li>
+                        <li>貸切風呂1回付き</li>
+                    </ul>
+                    <button class="reserve-btn">予約する</button>
+                </div>
+                <div class="plan">
+                    <h3>のんびり湯治プラン</h3>
+                    <p class="price">¥18,000<span>〜</span></p>
+                    <p class="description">リーズナブルに温泉を満喫できる湯治向けプラン</p>
+                    <ul>
+                        <li>夕食：郷土料理</li>
+                        <li>朝食：和朝食</li>
+                        <li>長時間滞在OK</li>
+                    </ul>
+                    <button class="reserve-btn">予約する</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 旅館 林檎屋. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">プライバシーポリシー</a>
+                <a href="#">利用規約</a>
+                <a href="#">お問い合わせ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
