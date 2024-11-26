@@ -40,19 +40,19 @@ function HomePage() {
           <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <Feature 
               title="温泉"
-              description="当館自慢の天然温泉では、四季折々の景色を眺めながら、心身ともに癒やされるひとときをお過ごしいただけます。"
+              description="開湯1900年の温泉が楽しめる共同浴場がすぐ目の前です。その他の共同浴場も徒歩圏内にあり飲食店やお土産屋さんも同じ通りにございます。"
               imageUrl="/images/onsen.jpg"
               imageAlt="天然温泉の露天風呂"
             />
             <Feature
               title="お部屋"
-              description="全室から日本庭園が望める、落ち着きのある和の空間。現代的な快適さと伝統的な和の趣を兼ね備えた客室です。"
+              description="お部屋には薄型テレビが備わります。それぞれのお部屋に共用バスルーム、無料バスアメニティ、ベッドリネンが備わります。"
               imageUrl="/images/room.jpg"
               imageAlt="和モダンな客室"
             />
             <Feature
               title="お料理"
-              description="山口県の旬の食材を使用した会席料理。地元の味覚と共に、目にも美しい料理の数々をご堪能ください。"
+              description="蔵王温泉 林檎屋にはレストランがあります。滞在時に営業しています。"
               imageUrl="/images/cuisine.jpg"
               imageAlt="会席料理"
             />
