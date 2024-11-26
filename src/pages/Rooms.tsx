@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wifi, Tv, Users, Bath, Fan, Coffee, Power, Shirt, Bed, Ban } from 'lucide-react';
+import { Calendar, Clock, Info, Wifi, Tv, Users, Bath, Fan, Coffee, Power, Shirt, Bed, Ban } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 interface RoomType {
@@ -21,6 +22,13 @@ interface RoomType {
 }
 
 const Rooms = () => {
+  const navigate = useNavigate();
+
+  const handleReservation = () => {
+    window.scrollTo(0, 0);
+    navigate('/reservation');
+  };
+
   const roomTypes: RoomType[] = [
     {
       id: 'twin',
@@ -244,7 +252,10 @@ const Rooms = () => {
                         </span>
                       </div>
                     ))}
-                    <button className="w-full mt-4 bg-stone-800 text-white py-3 rounded-md hover:bg-stone-900 transition-colors font-mincho">
+                    <button 
+                      onClick={handleReservation}
+                      className="w-full mt-4 bg-stone-800 text-white py-3 rounded-md hover:bg-stone-900 transition-colors font-mincho"
+                    >
                       予約する
                     </button>
                   </div>
