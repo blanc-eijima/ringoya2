@@ -8,25 +8,25 @@ const Onsen = () => {
       name: '冬',
       title: '雪見風呂',
       description: '真っ白な雪景色の中、湯船から見る雪の降る風景は幻想的です。冷たい空気と温かな湯の対比が、冬ならではの贅沢な癒しを提供します。',
-      image: '/images/yukimi.jpg'
+      image: '/images/yukimi.webp'
     },
     {
       name: '秋',
       title: '紅葉',
       description: '鮮やかな紅葉に包まれた露天風呂は、まるで絵画の中にいるかのような美しさです。山々を染める赤や黄色の色彩が心を和ませます。',
-      image: '/images/aki.jpg'
+      image: '/images/aki.webp'
     },
     {
       name: '夏',
       title: '涼感',
       description: '高原の涼しい風とともに、温泉でリフレッシュ。都会の暑さから逃れて、自然に癒されるひとときが過ごせます。',
-      image: '/images/natu.jpg'
+      image: '/images/natu.webp'
     },
     {
       name: '春',
       title: '新緑',
       description: '山々が若葉に覆われるこの季節には、清々しい空気とともに温泉を楽しめます。春ならではの生命力あふれる風景が訪れる人々を魅了します。',
-      image: '/images/haru.jpg'
+      image: '/images/haru.webp'
     }
   ];
 
@@ -37,7 +37,7 @@ const Onsen = () => {
       hours: '6:00-22:00',
       price: '大人 800円 / 子供 400円',
       features: ['露天風呂', '内湯', '休憩所'],
-      image: 'https://images.unsplash.com/photo-1545079968-1feb95494244?auto=format&fit=crop&q=80&w=1024'
+      image: '/images/open-air-bath.webp'
     },
     {
       name: '上湯',
@@ -45,7 +45,7 @@ const Onsen = () => {
       hours: '5:00-22:00',
       price: '大人 500円 / 子供 250円',
       features: ['内湯', '洗い場'],
-      image: 'https://images.unsplash.com/photo-1581416291904-0dc486b6f146?auto=format&fit=crop&q=80&w=1024'
+      image: '/images/kamiyu.webp'
     },
     {
       name: '川原湯',
@@ -53,7 +53,7 @@ const Onsen = () => {
       hours: '5:00-22:00',
       price: '大人 500円 / 子供 250円',
       features: ['内湯', '洗い場'],
-      image: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=1024'
+      image: '/images/kawarayu.webp'
     }
   ];
 
@@ -64,7 +64,7 @@ const Onsen = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="/images/onsen-top.jpg"
+          src="/images/onsen-top.webp"
           alt="蔵王温泉の露天風呂"
           className="w-full h-full object-cover"
         />

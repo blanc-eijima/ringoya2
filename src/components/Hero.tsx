@@ -5,21 +5,21 @@ const Hero = () => {
 
   const slides = [
     {
-      url: "https://zao-ringo-sakura.jp/image-bolt/slider-01.jpg",
+      url: "/images/slide01.webp",
       alt: "木製の内装が施された温泉の浴槽。透明な湯が満たされ、落ち着いた雰囲気のある温泉の一角"
     },
     {
-      url: "https://zao-ringo-sakura.jp/image-bolt/slider-02.jpg",
+      url: "/images/slide02.webp",
       alt: "冬の岩壁に形成された大きな氷柱群が垂れ下がる、迫力ある雪景色"
     },
     {
-      url: "https://zao-ringo-sakura.jp/image-bolt/slider-04.jpg",
-      alt: "樹氷に覆われた雪山のスキーコースを滑るスキーヤー。周囲には白銀の世界が広がり、美しい冬の景色が楽しめる"
+      url: "/images/slide03.webp",
+      alt: "湯気が立ち上る温泉の湯面。穏やかな雰囲気が漂う、落ち着いた温泉の情景"
     },
     {
-      url: "https://zao-ringo-sakura.jp/image-bolt/slider-03.jpg",
-      alt: "湯気が立ち上る温泉の湯面。穏やかな雰囲気が漂う、落ち着いた温泉の情景"
-    }
+      url: "/images/slide04.webp",
+      alt: "樹氷に覆われた雪山のスキーコースを滑るスキーヤー。周囲には白銀の世界が広がり、美しい冬の景色が楽しめる"
+    },
   ];
 
   useEffect(() => {
