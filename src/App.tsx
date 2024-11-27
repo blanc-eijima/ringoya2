@@ -13,10 +13,17 @@ import Onsen from './pages/Onsen';
 import Reservation from './pages/Reservation';
 import Thanks from './pages/Thanks';
 import Introduction from './components/Introduction';
+import { useScrollToTop } from './utils/scrollRestoration';
+
+function ScrollToTop() {
+  useScrollToTop();
+  return null;
+}
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/onsen" element={<Onsen />} />
