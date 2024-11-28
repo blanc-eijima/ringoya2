@@ -1,160 +1,80 @@
 import React from 'react';
-import { MapPin, Train, Bus, Car, Phone, Mail, Clock, MapIcon, Coffee, Landmark, Tree } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import TransportationCard from '../components/access/TransportationCard';
 
 const Access = () => {
-  const transportMethods = [
-    {
-      icon: <Train className="w-6 h-6" />,
-      title: '電車でお越しの場合',
-      steps: [
-        'JR山陽本線「温泉駅」下車',
-        '駅から無料送迎バスで15分',
-        '※送迎バスは要予約'
-      ]
-    },
-    {
-      icon: <Bus className="w-6 h-6" />,
-      title: 'バスでお越しの場合',
-      steps: [
-        '山口駅から路線バス「温泉線」で40分',
-        '「林檎屋前」バス停下車',
-        '徒歩1分'
-      ]
-    },
-    {
-      icon: <Car className="w-6 h-6" />,
-      title: 'お車でお越しの場合',
-      steps: [
-        '山陽自動車道「山口IC」から30分',
-        '無料駐車場完備（50台）',
-        'カーナビ設定：〒123-4567 山口県温泉町温泉123-4'
-      ]
-    }
+  const carRoutes = [
+    '東北自動車道（村田J.C.T）～山形自動車道（山形蔵王I.C）～西蔵王高原ライン経由約1時間20分',
+    '東北自動車道（白石蔵王I.C）～エコーライン経由約1時間30分（冬季通行止め)'
   ];
 
-  const nearbySpots = [
-    {
-      icon: <Landmark className="w-5 h-5" />,
-      name: '温泉寺',
-      distance: '徒歩10分',
-      description: '創建1300年の古刹。国宝の五重塔が見どころ。'
-    },
-    {
-      icon: <Tree className="w-5 h-5" />,
-      name: '温泉公園',
-      distance: '徒歩5分',
-      description: '四季折々の自然が楽しめる公園。桜の名所としても有名。'
-    },
-    {
-      icon: <Coffee className="w-5 h-5" />,
-      name: '温泉街商店街',
-      distance: '徒歩3分',
-      description: '地元の特産品や飲食店が並ぶ情緒豊かな通り。'
-    }
+  const trainRoutes = [
+    '東京駅～（山形新幹線）～山形駅(約2時間30分)',
+    '新潟駅～（羽越本線）～山形駅(約3時間) →山形駅～（山形交通バス）～蔵王温泉(約40分）',
+    '仙台駅～（仙山線）～山形駅(約1時間)'
   ];
 
   return (
-    <div className="pt-24 bg-stone-50">
+    <div className="min-h-screen bg-stone-50">
+      <Navbar />
+      
       {/* Hero Section */}
-      <div className="bg-stone-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-medium mb-4">アクセス・周辺案内</h1>
-          <p className="text-stone-300">山口県の自然に囲まれた当館までのアクセス方法をご案内いたします。</p>
+      <div className="relative h-[60vh] overflow-hidden">
+        <img
+          src="/images/access-hero.webp"
+          alt="蔵王温泉へのアクセス"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-medium mb-4 font-mincho">アクセス</h1>
+            <div className="flex items-center justify-center gap-2">
+              <MapPin className="w-5 h-5" />
+              <p className="text-xl font-mincho">〒990-2301 山形県山形市蔵王温泉710</p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Basic Information */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
-          <h2 className="text-2xl font-medium mb-6 text-stone-800">基本情報</h2>
-          <div className="grid gap-6">
-            <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-stone-600 flex-shrink-0" />
-              <div>
-                <p className="font-medium text-stone-800">所在地</p>
-                <p className="text-stone-600">〒123-4567</p>
-                <p className="text-stone-600">山口県温泉町温泉123-4</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Phone className="w-6 h-6 text-stone-600" />
-              <div>
-                <p className="font-medium text-stone-800">電話番号</p>
-                <p className="text-stone-600">123-456-7890</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Mail className="w-6 h-6 text-stone-600" />
-              <div>
-                <p className="font-medium text-stone-800">メールアドレス</p>
-                <p className="text-stone-600">info@ringoya-ryokan.jp</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-stone-600" />
-              <div>
-                <p className="font-medium text-stone-800">営業時間</p>
-                <p className="text-stone-600">チェックイン 15:00〜20:00</p>
-                <p className="text-stone-600">チェックアウト 〜11:00</p>
-              </div>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <TransportationCard type="car" routes={carRoutes} />
+          <TransportationCard type="train" routes={trainRoutes} />
         </div>
 
-        {/* Transportation */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
-          <h2 className="text-2xl font-medium mb-6 text-stone-800">交通アクセス</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {transportMethods.map((method, index) => (
-              <div key={index} className="bg-stone-50 p-6 rounded-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-stone-600">{method.icon}</div>
-                  <h3 className="font-medium text-stone-800">{method.title}</h3>
-                </div>
-                <ul className="space-y-2">
-                  {method.steps.map((step, stepIndex) => (
-                    <li key={stepIndex} className="text-stone-600 flex items-start gap-2">
-                      <span className="text-amber-600 mt-1.5">•</span>
-                      {step}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Map */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <MapIcon className="w-6 h-6 text-stone-600" />
-            <h2 className="text-2xl font-medium text-stone-800">地図</h2>
-          </div>
-          <div className="aspect-video bg-stone-100 rounded-lg flex items-center justify-center">
-            <p className="text-stone-600">Google Mapsを埋め込み</p>
-          </div>
-        </div>
-
-        {/* Nearby Spots */}
-        <div className="bg-white rounded-lg shadow-sm p-8">
-          <h2 className="text-2xl font-medium mb-6 text-stone-800">周辺観光スポット</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {nearbySpots.map((spot, index) => (
-              <div key={index} className="bg-stone-50 p-6 rounded-lg">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="text-stone-600">{spot.icon}</div>
-                  <div>
-                    <h3 className="font-medium text-stone-800">{spot.name}</h3>
-                    <p className="text-sm text-stone-500">{spot.distance}</p>
-                  </div>
-                </div>
-                <p className="text-stone-600">{spot.description}</p>
-              </div>
-            ))}
+        {/* Map Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-medium text-stone-800 mb-8 text-center font-mincho">地図</h2>
+          <div className="aspect-video w-full max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12523.804753441172!2d140.3969972!3d38.166488!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bb696c1f2fc4f%3A0x37a51d9c8a88b434!2z6JKy546L5rip5rOJ!5e0!3m2!1sja!2sjp!4v1710669600000!5m2!1sja!2sjp"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="蔵王温泉 林檎屋 地図"
+              className="rounded-md"
+            ></iframe>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-stone-800 text-stone-300 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="mb-4">© 2024 旅館 林檎屋. All Rights Reserved.</p>
+          <div className="flex justify-center space-x-6">
+            <a href="#" className="hover:text-white transition-colors">プライバシーポリシー</a>
+            <a href="#" className="hover:text-white transition-colors">利用規約</a>
+            <a href="#" className="hover:text-white transition-colors">お問い合わせ</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

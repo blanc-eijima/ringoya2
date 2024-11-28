@@ -297,6 +297,18 @@ const Rooms = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-stone-800 text-stone-300 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="mb-4">© 2024 旅館 林檎屋. All Rights Reserved.</p>
+          <div className="flex justify-center space-x-6">
+            <a href="#" className="hover:text-white transition-colors">プライバシーポリシー</a>
+            <a href="#" className="hover:text-white transition-colors">利用規約</a>
+            <a href="#" className="hover:text-white transition-colors">お問い合わせ</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

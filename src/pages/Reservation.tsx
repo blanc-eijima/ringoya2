@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Info } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Calendar, Info } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { lookupPostalCode } from '../utils/postalCode';
 
 interface ReservationFormData {
-  firstName: string;
-  lastName: string;
-  furiganaFirst: string;
-  furiganaLast: string;
+  name: string;
+  furigana: string;
   email: string;
   confirmEmail: string;
   postalCode: string;
@@ -20,11 +18,9 @@ interface ReservationFormData {
   checkInDate: string;
   adults: number;
   children: number;
+  roomType: string;
   adultMeal: string;
   childMeal: string;
-  pets: boolean;
-  roomType: string;
-  bathType: string;
   parkingType: string;
   notes: string;
 }
@@ -32,10 +28,8 @@ interface ReservationFormData {
 const Reservation = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<ReservationFormData>({
-    firstName: '',
-    lastName: '',
-    furiganaFirst: '',
-    furiganaLast: '',
+    name: '',
+    furigana: '',
     email: '',
     confirmEmail: '',
     postalCode: '',
@@ -47,12 +41,10 @@ const Reservation = () => {
     checkInDate: '',
     adults: 2,
     children: 0,
+    roomType: 'ツインルーム 共用トイレ',
     adultMeal: '和食',
     childMeal: '子供用和食',
-    pets: false,
-    roomType: '和室',
-    bathType: '大浴場',
-    parkingType: '一般駐車場',
+    parkingType: '不要',
     notes: ''
   });
 
@@ -158,73 +150,39 @@ const Reservation = () => {
               </label>
             </p>
 
-            {/* お名前 */}
+            {/* お客様情報 */}
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-stone-800 border-b pb-2 font-mincho">お客様情報</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-1">
-                    姓<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    required
-                    className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-1">
-                    名<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    required
-                    className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                  />
-                </div>
+              <div className="max-w-[60%]">
+                <label className="block text-sm font-medium text-stone-700 mb-1">
+                  お名前<span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-1">
-                    セイ<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="furiganaLast"
-                    required
-                    className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    value={formData.furiganaLast}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-1">
-                    メイ<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="furiganaFirst"
-                    required
-                    className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    value={formData.furiganaFirst}
-                    onChange={handleInputChange}
-                  />
-                </div>
+              <div className="max-w-[60%]">
+                <label className="block text-sm font-medium text-stone-700 mb-1">
+                  ふりがな<span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="furigana"
+                  required
+                  className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  value={formData.furigana}
+                  onChange={handleInputChange}
+                />
               </div>
-            </div>
 
-            {/* 連絡先 */}
-            <div className="space-y-4 mt-8">
-              <h3 className="text-lg font-medium text-stone-800 border-b pb-2 font-mincho">連絡先</h3>
-              
+              {/* 連絡先 */}
               <div>
                 <label className="block text-sm font-medium text-stone-700 mb-1">
                   メールアドレス<span className="text-red-500">*</span>
@@ -256,7 +214,7 @@ const Reservation = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-stone-700 mb-1">
-                    電話番号（携帯番号など連絡のとれる番号）<span className="text-red-500">*</span>
+                    電話番号（携帯番号など）<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -269,7 +227,7 @@ const Reservation = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-stone-700 mb-1">
-                    電話番号（ご自宅の番号など）
+                    電話番号（ご自宅など）
                   </label>
                   <input
                     type="tel"
@@ -280,12 +238,8 @@ const Reservation = () => {
                   />
                 </div>
               </div>
-            </div>
 
-            {/* 住所 */}
-            <div className="space-y-4 mt-8">
-              <h3 className="text-lg font-medium text-stone-800 border-b pb-2 font-mincho">ご住所</h3>
-              
+              {/* 住所 */}
               <div>
                 <label className="block text-sm font-medium text-stone-700 mb-1">
                   郵便番号<span className="text-red-500">*</span>
@@ -421,9 +375,9 @@ const Reservation = () => {
                   value={formData.roomType}
                   onChange={handleInputChange}
                 >
-                  <option value="和室">和室</option>
-                  <option value="和洋室">和洋室</option>
-                  <option value="特別室">特別室</option>
+                  <option value="ツインルーム 共用トイレ">ツインルーム 共用トイレ</option>
+                  <option value="スタンダード ファミリールーム">スタンダード ファミリールーム</option>
+                  <option value="エコノミー シングルルーム">エコノミー シングルルーム</option>
                 </select>
               </div>
 

@@ -42,8 +42,8 @@ const Navbar = () => {
             <Link to="/onsen" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">温泉</Link>
             <Link to="/rooms" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">客室</Link>
             <a href="#" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">食事</a>
-            <a href="#" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">館内施設</a>
-            <a href="#" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">アクセス・周辺観光</a>
+            <Link to="/access" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">アクセス</Link>
+            <Link to="/area" className="px-4 py-2 text-white/90 hover:text-white transition-colors font-mincho">周辺エリア</Link>
             <button 
               onClick={handleReservation}
               className="ml-4 bg-amber-600/90 hover:bg-amber-600 text-white px-6 py-2.5 rounded-md transition-all duration-300 hover:shadow-lg font-mincho"
@@ -76,12 +76,12 @@ const Navbar = () => {
             <a href="#" className="block px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors font-mincho">
               食事
             </a>
-            <a href="#" className="block px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors font-mincho">
-              館内施設
-            </a>
-            <a href="#" className="block px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors font-mincho">
-              アクセス・周辺観光
-            </a>
+            <Link to="/access" className="block px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors font-mincho">
+              アクセス
+            </Link>
+            <Link to="/area" className="block px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors font-mincho">
+              周辺エリア
+            </Link>
             <div className="px-3 py-3">
               <button 
                 onClick={handleReservation}

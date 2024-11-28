@@ -13,10 +13,8 @@
 <body>
     <!-- Netlify Forms Detection -->
     <form name="reservation" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="lastName" />
-      <input type="text" name="firstName" />
-      <input type="text" name="furiganaLast" />
-      <input type="text" name="furiganaFirst" />
+      <input type="text" name="name" />
+      <input type="text" name="furigana" />
       <input type="email" name="email" />
       <input type="email" name="confirmEmail" />
       <input type="text" name="postalCode" />
@@ -29,9 +27,9 @@
       <input type="number" name="adults" />
       <input type="number" name="children" />
       <select name="roomType">
-        <option value="和室">和室</option>
-        <option value="和洋室">和洋室</option>
-        <option value="特別室">特別室</option>
+        <option value="ツインルーム 共用トイレ">ツインルーム 共用トイレ</option>
+        <option value="スタンダード ファミリールーム">スタンダード ファミリールーム</option>
+        <option value="エコノミー シングルルーム">エコノミー シングルルーム</option>
       </select>
       <select name="adultMeal">
         <option value="和食">和食</option>
@@ -48,7 +46,7 @@
         <option value="大型車両">大型車両</option>
       </select>
       <textarea name="notes"></textarea>
-      <input type="hidden" name="subject" data-remove-prefix value="林檎屋予約: %{data.lastName} %{data.firstName} 様" />
+      <input type="hidden" name="subject" data-remove-prefix value="林檎屋予約: %{data.name} 様" />
     </form>
 
     <div id="root"></div>

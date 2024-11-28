@@ -10,6 +10,8 @@ import Amenities from './components/Amenities';
 import Testimonials from './components/Testimonials';
 import Rooms from './pages/Rooms';
 import Onsen from './pages/Onsen';
+import Access from './pages/Access';
+import Area from './pages/Area';
 import Reservation from './pages/Reservation';
 import Thanks from './pages/Thanks';
 import Introduction from './components/Introduction';
@@ -27,6 +29,8 @@ function App() {
       <Routes>
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/onsen" element={<Onsen />} />
+        <Route path="/access" element={<Access />} />
+        <Route path="/area" element={<Area />} />
         <Route path="/reservation" element={<Reservation />} />
         <Route path="/thanks" element={<Thanks />} />
         <Route path="/" element={<HomePage />} />
