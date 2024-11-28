@@ -22,7 +22,7 @@ const Access = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="/images/access-hero.webp"
+          src="/images/access-top.webp"
           alt="蔵王温泉へのアクセス"
           className="w-full h-full object-cover"
         />

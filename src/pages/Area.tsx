@@ -12,7 +12,7 @@ const Area = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="/images/area-hero.webp"
+          src="/images/area-top.webp"
           alt="蔵王温泉街の風景"
           className="w-full h-full object-cover"
         />
