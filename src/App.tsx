@@ -7,7 +7,6 @@ import Gallery from './components/Gallery';
 import Plan from './components/Plan';
 import News from './components/News';
 import Amenities from './components/Amenities';
-import Testimonials from './components/Testimonials';
 import Rooms from './pages/Rooms';
 import Onsen from './pages/Onsen';
 import Access from './pages/Access';
@@ -71,7 +70,6 @@ function HomePage() {
         <Gallery />
         <News />
         <Amenities />
-        <Testimonials />
       </main>
       <footer className="bg-stone-800 text-stone-300 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
